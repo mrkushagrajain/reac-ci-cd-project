@@ -1,0 +1,11 @@
+name: greeting
+on: [push,workflow_dispatch]
+jobs: 
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "get-code"
+              run: |
+                 echo "heloo workd"
+                 echo "${{toJson(github)}}"
+                 git clone https://github.com/${{github.repository}}.git
